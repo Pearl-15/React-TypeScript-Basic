@@ -12,8 +12,8 @@ function App() {
     <main>
      <CourseGoal 
       title="Learn React"
-      description="Learn React desc"
      />
+     <p>Learn React Description</p>
      </main>
     </>
   )
