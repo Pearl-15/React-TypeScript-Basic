@@ -1,9 +1,6 @@
-import {type ReactNode} from 'react';
+import {type PropsWithChildren} from 'react';
 
-interface CourseGoalProps{
-    title: string;
-    children: ReactNode;
-}
+type CourseGoalProps =  PropsWithChildren<{title: string}>;
 
 export default function CourseGoal( { title, children }: CourseGoalProps){
     
