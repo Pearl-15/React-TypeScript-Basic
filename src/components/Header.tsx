@@ -13,7 +13,7 @@ export default function Header( {image , children}: HeaderProps){
             <img src={image.src} alt={image.alt}/>
             
             {/* alternative way to use spread operator as using same key "src and alt" */}
-            <img {...image}/> 
+            {/* <img {...image}/>  */}
 
             {children}
         </header>
