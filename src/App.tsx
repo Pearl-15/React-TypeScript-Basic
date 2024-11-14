@@ -6,6 +6,7 @@ import CourseGoal from './components/CourseGoal.tsx';
 import Header from './components/Header.tsx';
 import goalsImg from './assets/goals.jpg'
 import CourseGoalList from './components/CourseGoalList.tsx';
+import NewGoal from './components/NewGoal.tsx';
 
 export type CourseGoal = {
   title: string;
@@ -17,12 +18,12 @@ function App() {
 
   const [goals, setGoals] = useState<CourseGoal[]>([]); // Generic type, obj array 
 
-  function handleAddGoal() {
+  function handleAddGoal(goal: string, summary: string) {
     setGoals(prevGoals => {
       const newGoal: CourseGoal = {
         id: Math.random(),
-        title: 'Learn Redux',
-        description: 'Redux is a global state management',
+        title: goal,
+        description: summary,
 
       };
       return [...prevGoals, newGoal]
@@ -41,7 +42,7 @@ function App() {
         >
           <h1>Your Course Goals</h1>
         </Header>
-        <button onClick={handleAddGoal}>Add Goal</button>
+        <NewGoal onAddGoal={handleAddGoal}/>
         <CourseGoalList goals={goals} onDeleteGoal={hanldeDeleteGoal}/>
       </main>
     </>
