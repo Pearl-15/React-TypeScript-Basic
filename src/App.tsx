@@ -7,6 +7,7 @@ import Header from './components/Header.tsx';
 import goalsImg from './assets/goals.jpg'
 import CourseGoalList from './components/CourseGoalList.tsx';
 import NewGoal from './components/NewGoal.tsx';
+import InfoBox from './components/InfoBox.tsx';
 
 export type CourseGoal = {
   title: string;
