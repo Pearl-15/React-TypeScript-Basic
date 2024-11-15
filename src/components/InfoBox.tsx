@@ -9,15 +9,14 @@ export default function InfoBox( {mode, children}: InfoBoxProps){
 
     if(mode === "hint"){
         return(
-            <aside>
-                <h2>Hint</h2>
+            <aside className="infobox infobox-hint">
                 {children}
             </aside>
         )
     }
 
     return(
-        <aside>
+        <aside className="infobox infobox-warning warning--low">
             <h2>Warning</h2>
             {children}
         </aside>
