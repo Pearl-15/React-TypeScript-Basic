@@ -20,18 +20,18 @@ export default function CourseGoalList({goals, onDeleteGoal}: CourseGoalListProp
     }
 
     let warningBox: ReactNode; //does not have initial value only know type - will pass as a children so use "ReactNode" type
-    let a: 'low' | 'medium' | 'high' | undefined;
+    let severityStyle: 'low' | 'medium' | 'high' | undefined;
     if (goals.length === 3){
-        a='low';
+        severityStyle='low';
     }else if(goals.length > 3 && goals.length <= 5){
-        a='medium';
+        severityStyle='medium';
     }else if(goals.length >5){
-        a='high';
+        severityStyle='high';
     }
     if(goals.length >= 3){
         warningBox = (
             // here need "mode" "severity" & children props
-            <InfoBox mode='warning' severity={a}>
+            <InfoBox mode='warning' severity={severityStyle}>
                 You're collecting a lot of goals. Don't put so hard on yourself.
             </InfoBox>
         )
